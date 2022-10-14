@@ -1,9 +1,11 @@
 <template>
-  <div class="container">
+  <!-- <div class="container">
     <header class="jumbotron">
-      <h3>{{content}}</h3>
+      <h3><iframe src="https://calendar.google.com/calendar/embed?src=...." style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe></h3>
     </header>
-  </div>
+  </div> -->
+<el-calendar v-model="value">
+</el-calendar>
 </template>
 
 <script>
@@ -13,7 +15,8 @@ export default {
   name: 'AdminVue',
   data() {
     return {
-      content: ''
+      content: '',
+      value: new Date()
     };
   },
   mounted() {

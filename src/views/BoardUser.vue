@@ -1,9 +1,11 @@
 <template>
-  <div class="container">
+  <!-- <div class="container">
     <header class="jumbotron">
       <h3>{{content}}</h3>
     </header>
-  </div>
+  </div> -->
+  <el-calendar v-model="value">
+</el-calendar>
 </template>
 
 <script>
@@ -13,7 +15,8 @@ export default {
   name: 'UserVue',
   data() {
     return {
-      content: ''
+      content: '',
+       value: new Date()
     };
   },
   mounted() {

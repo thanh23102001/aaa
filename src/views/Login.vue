@@ -56,7 +56,6 @@
           <div class="row g-0">
             <div class="col-lg-6">
               <div class="card-body p-md-5 mx-md-4">
-
                 <div class="text-center">
                   <img src="http://danhbaict.vn/uploads/images/vmg%20logo.jpg"
                     style="width: 185px;" alt="logo">
@@ -69,20 +68,33 @@
                   <div class="form-outline mb-4">
                     <input  v-model="user.username"
             v-validate="'required'"
-            type="text"
+            type=""
             class="form-control"
-            name="username" />
-                    <label class="form-label" for="form2Example11">Username</label>
+            name="username"
+            />
+
+                    <label class="form-label" for="form2Example11">Email</label>
                   </div>
 
+                  <div
+            v-if="errors.has('username')"
+            class="alert alert-danger"
+            role="alert"
+          >Email is required!</div>
                   <div class="form-outline mb-4">
                     <input v-model="user.password"
             v-validate="'required'"
             type="password"
             class="form-control"
-            name="password"/>
+            name="password"
+            />
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
+                           <div
+            v-if="errors.has('password')"
+            class="alert alert-danger"
+            role="alert"
+          >Password is required!</div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
                     <button class="btn btn-primary btn-block" :disabled="loading">Log
@@ -156,7 +168,7 @@ export default {
           );
         }
       });
-    }
+    },
   }
 };
 </script>
